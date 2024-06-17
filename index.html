@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Perl Kelp</title>
+<style>
+    * { box-sizing: border-box; }
+
+    .color, a {
+        color: #0298c3;
+        font-weight: bold;
+    }
+
+    body {
+        width: 100%;
+        margin: 0 auto;
+        min-height: 100%;
+        font-family: Helvetica, sans-serif;
+        font-size: 1.2rem ;
+    }
+
+    b {
+        color: #86df51;
+    }
+
+    code {
+        font-family: Courier New, monospace;
+        font-size: 1.1rem;
+        color: #999;
+    }
+
+    #download img {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: 50;
+        width: 15%;
+    }
+
+    aside {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 60%;
+        z-index: 25;
+    }
+
+    aside img {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: min(100%, 100vh);
+    }
+
+    article {
+        position: relative;
+        color: white;
+        background: #082c26;
+        background: linear-gradient(90deg, #082c26 0%, #156457 100%);
+        padding: 0 20%;
+        line-height: 1.4;
+        padding-top: 50px;
+        z-index: 100;
+    }
+
+    p {
+        text-align: justify;
+        padding: 50px;
+        padding-top: 0;
+        margin: 0;
+    }
+
+    @media only screen and (max-width: 768px) {
+        aside {
+            background-size: 80%;
+        }
+
+        aside img {
+            width: 80%
+        }
+
+        article {
+            padding: 0 5%;
+            padding-top: 20px;
+        }
+
+        p {
+            padding: 20px;
+            padding-top: 0;
+        }
+
+        #download img {
+            width: 30%;
+        }
+    }
+
+    @media only screen and (max-width: 1200px) {
+        article {
+            padding: 0 10%;
+            padding-top: 25px;
+        }
+
+        p {
+            padding: 25px;
+            padding-top: 0;
+        }
+
+        #download img {
+            width: 20%;
+        }
+    }
+
+</style>
+<link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/sgnix/kelp/master/art/logo.png">
+</head>
+
+<body>
+    <a id="download" href="https://metacpan.org/dist/Kelp">
+        <img src="images/metacpan.png" alt="Get from metacpan">
+    </a>
+    <aside style='background-image: url("https://raw.githubusercontent.com/sgnix/kelp/master/art/logo_wide.png")'>
+    </aside>
+
+    <article>
+    <p>
+    Welcome to <a href="https://metacpan.org/dist/Kelp">Kelp</a>, a lean Perl
+    web framework designed to make web development simple, efficient, and
+    powerful. Whether you're building a small personal project or a complex
+    application, Kelp <b>delivers the tools</b> required to turn your idea into
+    a fully functional website. At the same time, its minimalist design and
+    modular architecture results in <b>faster performance</b> and
+    <b>outstanding extensibility</b>. With Kelp, you can focus on writing
+    clean, maintainable code without the bloat of unnecessary features. Our
+    intuitive routing system, flexible configuration options, and seamless
+    integration with the Plack ecosystem <b>make developing with Perl a
+    pleasurable experience</b>.
+    </p>
+
+    <p>
+    Much like Perl itself, Kelp tries to move forward <b>without breaking
+    backward compatibility</b>. Recently released major version 2 of the
+    framework brought an astonishing number of <a
+    href="https://metacpan.org/dist/Kelp/changes">new features, bug fixes and
+    performance improvements</a> without causing any major disturbances to
+    existing applications. It values your time as a developer and lets you sit
+    back and enjoy a functional and stable website for <b>years</b>.
+    </p>
+
+    </article>
+
+    <aside style='background-image: url("")'>
+        <a href="example.psgi" title="Get the code for this example">
+            <img alt="API example" src="images/carbon.png">
+        </a>
+    </aside>
+
+    <article>
+    <p>
+    What makes Kelp different from the other web frameworks? From all the fine
+    <a href="https://metacpan.org/search?size=20&q=web+framework">web
+    frameworks in the Perl ecosystem</a>, the majority bring <b>their own
+    deployment code</b> and aim to write <b>their own processing
+    mechanisms</b>. Kelp, on the other hand, is <b>heavily Plack-centric</b>.
+    It uses Plack as its foundation layer, and it <b>builds the web framework
+    on top of it</b>. <code>Kelp::Request</code> is an extension of
+    <code>Plack::Request</code>, <code>Kelp::Response</code> is an extension of
+    <code>Plack::Response</code> and the application can be run natively
+    through <code>plackup</code>.
+    </p>
+
+    <p>
+    This approach of extending current CPAN code puts <b>well tested tools</b> in
+    the hands of the application developer, while keeping familiar syntax and
+    work flow. It also creates less friction when running in a pure Plack
+    environment, making Kelp <b>one of the fastest Perl web frameworks</b>.
+    </p>
+
+    <p>
+    Besides Plack itself, Kelp uses <a
+    href="https://cpandeps.grinnz.com/?dist=Kelp&phase=runtime&style=topdown">only
+    a few</a> popular, trusted CPAN modules for its internals. At the same
+    time, its core does not deliver features you might not need. Solutions to
+    many common problems <b>already exist</b> either as Plack application or
+    middleware, or as a Kelp third party module. The framework does its best to
+    keep a lean profile and a small footprint, and it's completely <b>object
+    manager agnostic</b>.
+    </p>
+
+    <p>
+    The Kelp project is distributed <b>through CPAN</b>. To install it, you can
+    use your local CPAN client - <code>cpanm Kelp</code> - or download and
+    build a tarball from metacpan. To get started, read <a
+    href="https://metacpan.org/pod/Kelp::Manual" title="Kelp::Manual on
+    metacpan">our extensive manual</a>. If you have any questions, we're
+    <b>happy to help</b> - you can either <a
+    href="https://github.com/sgnix/kelp">create a github issue</a> or <a
+    href="https://groups.google.com/g/perl-kelp">ask on our google group</a>.
+    </p>
+    </article>
+
+    <aside style='background-image: url("images/fin.png")'></aside>
+
+
+</body>
+
+</html>
+
