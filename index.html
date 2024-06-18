@@ -29,12 +29,19 @@
         color: #999;
     }
 
-    #download img {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        z-index: 50;
+    #links {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    #links a {
+        display: block;
         width: 15%;
+    }
+
+    #links img {
+        width: 100%;
     }
 
     aside {
@@ -45,10 +52,9 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: 60%;
-        z-index: 25;
     }
 
-    aside img {
+    aside .showcase {
         display: block;
         position: absolute;
         top: 50%;
@@ -65,7 +71,6 @@
         padding: 0 20%;
         line-height: 1.4;
         padding-top: 50px;
-        z-index: 100;
     }
 
     p {
@@ -94,8 +99,13 @@
             padding-top: 0;
         }
 
-        #download img {
-            width: 30%;
+        #links {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        #links a {
+            width: 35%;
         }
     }
 
@@ -110,20 +120,26 @@
             padding-top: 0;
         }
 
-        #download img {
+        #links a {
             width: 20%;
         }
     }
 
 </style>
-<link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/sgnix/kelp/master/art/logo.png">
+<link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Kelp-framework/Art/master/logo/logo.png">
 </head>
 
 <body>
-    <a id="download" href="https://metacpan.org/dist/Kelp">
-        <img src="images/metacpan.png" alt="Get from metacpan">
-    </a>
-    <aside style='background-image: url("https://raw.githubusercontent.com/sgnix/kelp/master/art/logo_wide.png")'>
+    <aside style='background-image: url("https://raw.githubusercontent.com/Kelp-framework/Art/master/logo/logo_wide.png")'>
+    <div id="links">
+        <a href="https://github.com/Kelp-framework/Kelp">
+            <img src="images/github.png" alt="Code on GitHub">
+        </a>
+        <a href="https://metacpan.org/dist/Kelp">
+            <img src="images/metacpan.png" alt="Install from MetaCPAN">
+        </a>
+    </div>
+
     </aside>
 
     <article>
@@ -155,7 +171,7 @@
 
     <aside style='background-image: url("")'>
         <a href="example.psgi" title="Get the code for this example">
-            <img alt="API example" src="images/carbon.png">
+            <img class="showcase" alt="API example" src="images/carbon.png">
         </a>
     </aside>
 
@@ -194,12 +210,14 @@
     <p>
     The Kelp project is distributed <b>through CPAN</b>. To install it, you can
     use your local CPAN client - <code>cpanm Kelp</code> - or download and
-    build a tarball from metacpan. To get started, read <a
+    build a tarball from MetaCPAN. To get started, read <a
     href="https://metacpan.org/pod/Kelp::Manual" title="Kelp::Manual on
     metacpan">our extensive manual</a>. If you have any questions, we're
     <b>happy to help</b> - you can either <a
-    href="https://github.com/sgnix/kelp">create a github issue</a> or <a
-    href="https://groups.google.com/g/perl-kelp">ask on our google group</a>.
+    href="https://github.com/Kelp-framework/Kelp">create a GitHub issue</a>, <a
+    href="https://github.com/Kelp-framework/Kelp/discussions">ask on GitHub
+    discussions</a> or <a href="https://groups.google.com/g/perl-kelp">ask on
+    our Google group</a>.
     </p>
     </article>
 
