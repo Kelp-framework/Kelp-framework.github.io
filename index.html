@@ -31,13 +31,14 @@
 
     #links {
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 40px;
     }
 
     #links a {
         display: block;
-        width: 15%;
+        width: 25%;
     }
 
     #links img {
@@ -54,13 +55,8 @@
         background-size: 60%;
     }
 
-    aside .showcase {
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: min(100%, 100vh);
+    .showcase {
+        width: 100%;
     }
 
     article {
@@ -99,13 +95,8 @@
             padding-top: 0;
         }
 
-        #links {
-            flex-direction: row;
-            justify-content: center;
-        }
-
         #links a {
-            width: 35%;
+            margin-bottom: 15px;
         }
     }
 
@@ -121,7 +112,7 @@
         }
 
         #links a {
-            width: 20%;
+            margin-bottom: 20px;
         }
     }
 
@@ -130,7 +121,11 @@
 </head>
 
 <body>
-    <aside style='background-image: url("https://raw.githubusercontent.com/Kelp-framework/Art/master/logo/logo_wide.png")'>
+    <aside id="kelp" style='background-image: url("https://raw.githubusercontent.com/Kelp-framework/Art/master/logo/logo_wide.png")'>
+    </aside>
+
+    <article>
+
     <div id="links">
         <a href="https://github.com/Kelp-framework/Kelp">
             <img src="images/github.png" alt="Code on GitHub">
@@ -140,9 +135,6 @@
         </a>
     </div>
 
-    </aside>
-
-    <article>
     <p>
     Welcome to <a href="https://metacpan.org/dist/Kelp">Kelp</a>, a lean Perl
     web framework designed to make web development simple, efficient, and
@@ -167,15 +159,12 @@
     back and enjoy a functional and stable website for <b>years</b>.
     </p>
 
-    </article>
-
-    <aside style='background-image: url("")'>
+    <p>
         <a href="example.psgi" title="Get the code for this example">
             <img class="showcase" alt="API example" src="images/carbon.png">
         </a>
-    </aside>
+    </p>
 
-    <article>
     <p>
     What makes Kelp different from the other web frameworks? From all the fine
     <a href="https://metacpan.org/search?size=20&q=web+framework">web
@@ -200,11 +189,9 @@
     Besides Plack itself, Kelp uses <a
     href="https://cpandeps.grinnz.com/?dist=Kelp&phase=runtime&style=topdown">only
     a few</a> popular, trusted CPAN modules for its internals. At the same
-    time, its core does not deliver features you might not need. Solutions to
-    many common problems <b>already exist</b> either as Plack application or
-    middleware, or as a Kelp third party module. The framework does its best to
-    keep a lean profile and a small footprint, and it's completely <b>object
-    manager agnostic</b>.
+    time, its core does not deliver features you might not need. The framework
+    does its best to keep a lean profile and a small footprint, and it's
+    completely <b>object manager agnostic</b>.
     </p>
 
     <p>
@@ -218,6 +205,54 @@
     href="https://github.com/Kelp-framework/Kelp/discussions">ask on GitHub
     discussions</a> or <a href="https://groups.google.com/g/perl-kelp">ask on
     our Google group</a>.
+    </p>
+
+    <p>
+    Solutions to many common problems <b>already exist</b> either as Plack
+    application or middleware, or as a Kelp module. Below are listed some of
+    the most impactful open source projects the Kelp ecosystem has to offer.
+    </p>
+
+    </article>
+
+    <aside id="whelk" style='background-image: url("https://raw.githubusercontent.com/Kelp-framework/Art/master/whelk/logo_wide.png")'></aside>
+
+    <article>
+    <div id="links">
+        <a href="https://github.com/Kelp-framework/Whelk">
+            <img src="images/github.png" alt="Code on GitHub">
+        </a>
+        <a href="https://metacpan.org/dist/Whelk">
+            <img src="images/metacpan.png" alt="Install from MetaCPAN">
+        </a>
+    </div>
+
+    <p>
+    Whelk is an awesome REST API framework layer on top of Kelp. It strives to
+    deliver the ability to create <b>self-documenting, self-validating REST
+    APIs</b>. Even though it functions a standalone Plack application, it can
+    be <b>easily integrated into a Kelp application</b>. It was designed with
+    <b>OpenAPI support</b> in mind, so APIs written using Whelk can be
+    <b>beautifully visualized</b> by Swagger UI with minimal effort.
+    </p>
+
+    <p>
+    By using Whelk, you get <b>all the benefits of Kelp</b> and the power to
+    easily to add an API to your application. While Kelp can deliver an API by
+    itself, it's not specifically crafted to <b>ensure data correctness</b> of
+    structured formats. Whelk fills that role perfectly and does not force you
+    to switch to another framework in the process.
+    </p>
+
+    <p>
+    Much like Kelp, Whelk is also distributed <b>through CPAN</b>. To install
+    it, you can use your local CPAN client - <code>cpanm Whelk</code> - or
+    download and build a tarball from MetaCPAN. To get started, read <a
+    href="https://metacpan.org/pod/Whelk::Manual" title="Whelk::Manual on
+    metacpan">the detailed manual</a>. Whelk is a young project which is
+    <b>currently in beta</b>. A stable release is scheduled for Q2/Q3 of 2024.
+    You can help, too - download it, test it and <b>let us know what you
+    think</b>.
     </p>
     </article>
 
